@@ -1,9 +1,7 @@
 import React from "react";
 import ContactItem from "../Contact";
-import styles from "./ContactList.module.css";
 import { useSelector } from "react-redux";
 import { getContacts, getFilter } from "../../redux/Phonebook/selectors";
-// import { connect } from "react-redux";
 
 export default function ContactList() {
     const contacts = useSelector(getContacts);
@@ -17,31 +15,13 @@ export default function ContactList() {
     };
 
     return (
-        <ul className={styles.contacts__list}>
+        <ul >
             {getFilteredContacts().map(({ name, number, id }) => (
                 <ContactItem key={id} name={name} number={number} id={id} />
             ))}
         </ul>
     );
 }
-
-// const mapStateToProps = (state) => ({
-//   contacts: state.contactsList,
-//   filter: state.contactsFilter,
-// });
-
-// export default connect(mapStateToProps, null)(ContactList);
-
-
-
-
-
-
-
-
-
-
-
 
 
 

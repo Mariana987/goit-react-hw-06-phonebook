@@ -45,39 +45,3 @@ export const persistor = persistStore(store);
 //   phonebookContacts: contactsReducer,
 // });
 // const store = createStore(rootReducer, composeWithDevTools());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { createStore, combineReducers } from "redux";
-// import { composeWithDevTools } from 'redux-devtools-extension';
-// import phonebookReducer from './Phonebook/phonebook-reducer';
-
-
-
-// const rootReduser = combineReducers({
-//     contacts: phonebookReducer
-// })
-
-// const reducer = (state = {}, action) => state;
-// const store = createStore(reducer, composeWithDevTools());
-// export default store

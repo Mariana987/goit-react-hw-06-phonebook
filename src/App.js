@@ -1,3 +1,33 @@
+import Form from './components/Form';
+import Filter from './components/Filter';
+import ContactList from './components/ContactList';
+import Container from './components/Container/Container';
+
+
+export default function App() {
+  return (
+    <Container>
+      <div>
+        <h1>Phonebook</h1>
+        <Form />
+        <h2>Contacts:</h2>
+        <Filter />
+        <ContactList />
+      </div>
+    </Container>
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
 
 // import { Component } from 'react';
 
@@ -96,35 +126,3 @@
 // }
 
 // export default App;
-
-
-// import { useState, useEffect } from "react";
-// import ContactForm from "./Components/ContactForm";
-// import Filter from "./Components/Filter";
-// import ContactList from "./Components/ContactList";
-import Form from './components/Form';
-import Filter from './components/Filter';
-import ContactList from './components/ContactList';
-import Container from './components/Container/Container';
-
-
-export default function App() {
-  // useEffect(() => {
-  //   window.localStorage.setItem("contacts", JSON.stringify(contacts));
-  // }, [contacts]);
-
-  return (
-    <Container>
-      <div>
-        <h1>Phonebook</h1>
-        <Form />
-        <h2>Contacts</h2>
-        <Filter />
-        <ContactList />
-      </div></Container>
-  );
-}
-
-// const [contacts, setContacts] = useState(
-//   () => JSON.parse(window.localStorage.getItem("contacts")) ?? []
-// );

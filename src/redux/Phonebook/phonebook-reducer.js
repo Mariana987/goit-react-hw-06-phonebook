@@ -1,11 +1,10 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { addContact, deleteContact, changeFilter } from "./phonebook-actions";
+import { addContact, deleteContact, Filter } from "./phonebook-actions";
 
 export const contactsList = createReducer([], {
     [addContact]: (state, { payload }) => {
-        console.log(payload);
         if (state.some(({ name }) => name === payload.name)) {
-            alert(`Sorry, contact is already in contacts list`);
+            alert(`Sorry, contact is already in your contacts list`);
             return state;
         }
         return [...state, payload];
@@ -15,8 +14,13 @@ export const contactsList = createReducer([], {
 });
 
 export const contactsFilter = createReducer("", {
-    [changeFilter]: (_, { payload }) => payload,
+    [Filter]: (_, { payload }) => payload,
 });
+
+
+
+
+
 
 // import { combineReducers } from "redux";
 // import types from "./phonebook-types";
@@ -25,7 +29,7 @@ export const contactsFilter = createReducer("", {
 //   switch (type) {
 //     case types.ADD:
 //       if (state.some(({ name }) => name === payload.name)) {
-//         alert(`Sorry, contact is already in contacts list`);
+//         alert(`Sorry, contact is already in your contacts list`);
 //         return state;
 //       }
 //       return [...state, payload];
@@ -39,7 +43,7 @@ export const contactsFilter = createReducer("", {
 // };
 // const filter = (state = "", { type, payload }) => {
 //   switch (type) {
-//     case types.CHANGE_FILTER:
+//     case types.FILTER:
 //       return (state = payload.target.value);
 //     default:
 //       return state;
@@ -60,28 +64,3 @@ export const contactsFilter = createReducer("", {
 
 
 
-
-
-
-
-
-
-
-
-
-// import { combineReducers } from 'redux';
-
-
-
-// const items = (state = [], action) => {
-//     return state;
-// }
-
-// const filter = (state = '', action) => {
-//     return state;
-// }
-
-// export default combineReducers({
-//     items,
-//     filter,
-// })
